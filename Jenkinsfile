@@ -12,6 +12,7 @@ pipeline{
 
                    git branch: 'main', url: 'https://github.com/pramodmr31/demo-counter-app.git'
                 }
+                }
             }
         }
  }
