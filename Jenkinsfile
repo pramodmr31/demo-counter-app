@@ -55,7 +55,7 @@ pipeline{
 
             steps{
                    script{
-                        withCredentials([string(credentialsId: 'docker_cred', variable: 'Dockerh			ub_Cred')])
+         withCredentials([string(credentialsId: 'docker_cred', variable: 'Dockerhub_Cred')])
 			sh 'docker login -u pramod284 -p $(Dockerhub_Cred)'
 			sh 'docker image push pramod284/demoproject_1:$BUILD_ID'  
 			}
