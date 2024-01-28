@@ -46,12 +46,8 @@ pipeline{
 
             steps{
                    script{
-                       // Build Docker image
-            sh "docker build -t ${Counterdemo_project}:v1.3 -t ${Counterdemo_project}:latest ."
-
-            // Tag Docker image with additional tags
-            sh "docker tag ${Counterdemo_project}:v1.3 pramod284/demoproject_1:${BUILD_ID}"
-            sh "docker tag ${Counterdemo_project}:v1.3 pramod284/demoproject_1:latest"
+                   sh 'docker image build -t $job_name:v1.$BUILD_ID .'
+		   sh 'docker image tag $job_name:v1.$BUILD_ID aksh3456/$job_name:latest'
 
 			 }
                   }
