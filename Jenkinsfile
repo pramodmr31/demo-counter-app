@@ -10,7 +10,8 @@ pipeline{
 
                 script{
 
-                   git branch: 'main', url: 'https://github.com/pramodmr31/demo-counter-app.git'
+                
+			git branch: 'main', changelog: false, poll: false, url: 'https://github.com/pramodmr31/demo-counter-app.git'
                   }
                 }
             } 
