@@ -45,9 +45,11 @@ pipeline{
          stage('docker image build'){
 
             steps{
-                   script{
-                   sh 'docker image build -t $job_name:v1.$BUILD_ID .'
-		   sh 'docker image tag $job_name:v1.$BUILD_ID aksh3456/$job_name:latest'
+			   // Build Docker image
+            sh "docker image build -t ${JOB_NAME}:v1.${BUILD_ID} ."
+
+            // Tag Docker image
+            sh "docker image tag ${JOB_NAME}:v1.${BUILD_ID} pramod284/${JOB_NAME}:latest"
 
 			 }
                   }
